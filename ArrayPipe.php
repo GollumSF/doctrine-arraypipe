@@ -9,7 +9,11 @@ class ArrayPipe extends Type {
 	const ARRAY_PIPE = 'array_pipe';
 	
 	public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) {
-		return 'TINYINT';
+		return $platform->getVarcharTypeDeclarationSQL($fieldDeclaration);
+	}
+	
+	public function getDefaultLength(AbstractPlatform $platform) {
+		return $platform->getVarcharDefaultLength();
 	}
 	
 	public function convertToPHPValue($value, AbstractPlatform $platform) {
@@ -23,7 +27,7 @@ class ArrayPipe extends Type {
 		if ($value === null) {
 			return $value;
 		}
-		return implode('|', $value)$value;
+		return implode('|', $value);
 	}
 	
 	public function getName() {
