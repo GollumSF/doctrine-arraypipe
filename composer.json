@@ -1,0 +1,33 @@
+{
+	"name" : "gollumsf/doctrine-arraypipe",
+	"type" : "library",
+	"description" : "An array pipe type for Doctrine MYSQL",
+	"keywords" : [
+		"array",
+		"pipe",
+		"doctrine",
+		"symfony"
+	],
+	"homepage" : "https://github.com/GollumSF/DoctrineArrayPipe",
+	"license" : "GPL-3.0-or-later",
+	"authors" : [{
+			"name" : "Damien Duboeuf",
+			"email" : "smeagolworms4@gmail.com"
+		}
+	],
+	"support" : {
+		"email" : "smeagolworms4@gmail.com",
+		"wiki" : "https://github.com/GollumSF/DoctrineArrayPipe/blob/master/README.md"
+	},
+	"minimum-stability": "dev",
+	"require" : {
+		"php" : ">=7.0",
+		"doctrine/common": "*"
+	},
+	"autoload" : {
+		"psr-0" : {
+			"GollumSF\\Doctrine" : ""
+		}
+	},
+	"target-dir" : "GollumSF/Doctrine"
+}
