@@ -14,7 +14,7 @@ composer require gollumsf/doctrine-arraypipe
 doctrine:
     dbal:
         types:
-            tinyint:  GollumSF\Doctrine\ArrayPipe
+            array_pipe: GollumSF\Doctrine\ArrayPipe
 ```
 
 
