@@ -20,6 +20,9 @@ class ArrayPipe extends Type {
 		if ($value === null) {
 			return $value;
 		}
+		if ($value === '') {
+			return  [];
+		}
 		return explode('|', $value);
 	}
 	
