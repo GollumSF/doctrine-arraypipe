@@ -8,14 +8,28 @@ use Doctrine\DBAL\Types\Type;
 class ArrayPipe extends Type {
 	const ARRAY_PIPE = 'array_pipe';
 	
+	/**
+	 * @param array $fieldDeclaration
+	 * @param AbstractPlatform $platform
+	 * @return string
+	 */
 	public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) {
 		return $platform->getClobTypeDeclarationSQL($fieldDeclaration);
 	}
 	
+	/**
+	 * @param AbstractPlatform $platform
+	 * @return int
+	 */
 	public function getDefaultLength(AbstractPlatform $platform) {
 		return $platform->getVarcharDefaultLength();
 	}
 	
+	/**
+	 * @param $value
+	 * @param AbstractPlatform $platform
+	 * @return mixed|string[]|null
+	 */
 	public function convertToPHPValue($value, AbstractPlatform $platform) {
 		if ($value === null) {
 			return $value;
@@ -26,6 +40,11 @@ class ArrayPipe extends Type {
 		return explode('|', $value);
 	}
 	
+	/**
+	 * @param $value
+	 * @param AbstractPlatform $platform
+	 * @return mixed|string|null
+	 */
 	public function convertToDatabaseValue($value, AbstractPlatform $platform) {
 		if ($value === null) {
 			return $value;
@@ -33,6 +52,9 @@ class ArrayPipe extends Type {
 		return implode('|', $value);
 	}
 	
+	/**
+	 * @return string
+	 */
 	public function getName() {
 		return self::ARRAY_PIPE;
 	}
