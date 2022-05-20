@@ -14,15 +14,7 @@ class ArrayPipe extends Type {
 	 * @return string
 	 */
 	public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) {
-		return $platform->getClobTypeDeclarationSQL($fieldDeclaration);
-	}
-	
-	/**
-	 * @param AbstractPlatform $platform
-	 * @return int
-	 */
-	public function getDefaultLength(AbstractPlatform $platform) {
-		return $platform->getVarcharDefaultLength();
+		return 'TEXT';
 	}
 	
 	/**
