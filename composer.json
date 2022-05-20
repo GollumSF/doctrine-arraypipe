@@ -22,7 +22,7 @@
 	"minimum-stability": "dev",
 	"require" : {
 		"php" : ">=7.0",
-		"doctrine/dbal": "2.*"
+		"doctrine/dbal": "^2|^3",
 	},
 	"autoload" : {
 		"psr-0" : {
